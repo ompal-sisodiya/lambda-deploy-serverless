@@ -4,9 +4,14 @@ pipeline {
   stages {
       
     stage('build' ) {
+
+      environment {
+        SERVERLESS_ACCESS_KEY = credentials('SERVERLESS_ACCESS_KEY')
+      }
       steps {
          //sh 'npm install'
          echo "Build Number: ${env.BUILD_NUMBER}"
+         echo "SERVERLESS_ACCESS_KEY": ${env.SERVERLESS_ACCESS_KEY}
         } 
       }
 

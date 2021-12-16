@@ -27,8 +27,9 @@ provider:
   profile: serverlessUser1
 
 # you can overwrite defaults here
-#  stage: dev
-#  region: us-east-1
+stage: dev
+region: us-east-1
+role: arn:aws:iam::324004022774:role/service-role/Splunk-Test-role-qrks4i1k
 
 # you can add statements to the Lambda function's IAM Role here
 #  iam:
