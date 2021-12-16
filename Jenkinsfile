@@ -11,7 +11,8 @@ pipeline {
       steps {
          //sh 'npm install'
          echo "Build Number: ${env.BUILD_NUMBER}"
-         echo "SERVERLESS_ACCESS_KEY": $SERVERLESS_ACCESS_KEY
+         sh 'echo "SERVERLESS_ACCESS_KEY is $SERVERLESS_ACCESS_KEY"'
+
         } 
       }
 
