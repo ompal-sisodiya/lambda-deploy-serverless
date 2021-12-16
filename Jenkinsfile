@@ -1,16 +1,19 @@
 pipeline {
   agent any
   tools {nodejs "node"}
+
+  parameters {
+      password(name: 'SERVERLESS_ACCESS_KEY', defaultValue: 'SECRET', description: 'Enter a password')
+    }
   stages {
       
     stage('build' ) {
 
-      environment {
-        SERVERLESS_ACCESS_KEY = credentials('SERVERLESS_ACCESS_KEY')
-      }
       steps {
          //sh 'npm install'
          echo "Build Number: ${env.BUILD_NUMBER}"
+          echo "Hello ${params.SERVERLESS_ACCESS_KEY}"
+
         //  echo "SERVERLESS_ACCESS_KEY is ${SERVERLESS_ACCESS_KEY}"
 
         } 
