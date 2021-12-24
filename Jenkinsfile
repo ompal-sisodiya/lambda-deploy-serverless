@@ -15,6 +15,7 @@ pipeline {
           echo "Hello ${params.SERVERLESS_ACCESS_KEY}"
 
           echo "SERVERLESS_ACCESS_KEY is ${SERVERLESS_ACCESS_KEY}"
+        echo "SECRET is ${SECRET}"
 
         } 
       }
@@ -35,6 +36,7 @@ pipeline {
 
       stage('Config'){
         steps {
+          sh "serverless config credentials --provider aws --key ${SERVERLESS_ACCESS_KEY} --secret ${SECRET} --profile serverlessUserProfile -o'
           echo 'Serverless profile create successfully'
         }
       }
