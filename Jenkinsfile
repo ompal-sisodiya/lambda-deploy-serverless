@@ -35,12 +35,6 @@ pipeline {
       }
 
       stage('Config'){
-        environment {
-            //SERVICE_CREDS = credentials('my-predefined-username-password')
-            //SERVICE_CREDS=credentials('aws-creds')
-
-        }
-        
         steps {
            withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-creds', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
               sh "echo Service AWS_ACCESS_KEY_ID is ${AWS_ACCESS_KEY_ID}"
