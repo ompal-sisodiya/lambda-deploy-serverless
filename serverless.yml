@@ -1,4 +1,4 @@
-service: sls-1t21-capital-conversion-handler
+service: lambda-deploy-serverless
 
 useDotenv: true
 
