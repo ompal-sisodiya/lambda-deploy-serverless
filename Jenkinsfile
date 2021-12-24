@@ -37,15 +37,17 @@ pipeline {
       stage('Config'){
         environment {
             //SERVICE_CREDS = credentials('my-predefined-username-password')
-            SERVICE_CREDS=credentials('aws-creds')
+            //SERVICE_CREDS=credentials('aws-creds')
 
         }
         
         steps {
-          sh "echo Service user is ${SERVICE_CREDS_USR}"
+           withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-creds', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+              sh "echo Service AWS_ACCESS_KEY_ID is ${AWS_ACCESS_KEY_ID}"
 
-          //sh "serverless config credentials --provider aws --key ${SERVERLESS_ACCESS_KEY} --secret ${SECRET} --profile serverlessUserProfile -o"
-          echo 'Serverless profile create successfully'
+              //sh "serverless config credentials --provider aws --key ${SERVERLESS_ACCESS_KEY} --secret ${SECRET} --profile serverlessUserProfile -o"
+              echo 'Serverless profile create successfully'
+           }
         }
       }
 
