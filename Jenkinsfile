@@ -14,7 +14,7 @@ pipeline {
          echo "Build Number: ${env.BUILD_NUMBER}"
           echo "Hello ${params.SERVERLESS_ACCESS_KEY}"
 
-        //  echo "SERVERLESS_ACCESS_KEY is ${SERVERLESS_ACCESS_KEY}"
+          echo "SERVERLESS_ACCESS_KEY is ${SERVERLESS_ACCESS_KEY}"
 
         } 
       }
