@@ -41,8 +41,8 @@ pipeline {
 
       stage('Deploy' ) {
         steps {
-           sh 'sls deploy'
            echo 'deploy successfully'
+           sh 'sls deploy'
           } 
         }
     }
