@@ -49,7 +49,7 @@ pipeline {
         }
     }
 
-// Post statement used for notify the pipe line 
+// Post statement used for notify the pipe lines
     // post {
     //   always {
     //    // execute every time when pipe line
