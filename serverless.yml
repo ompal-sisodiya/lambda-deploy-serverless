@@ -27,9 +27,9 @@ provider:
   profile: serverlessUserProfile
 
 # you can overwrite defaults here
-stage: dev
-region: us-east-1
-role: arn:aws:iam::324004022774:role/lambda-deployment-serverless-dev-us-east-1-lambdaRole
+# stage: dev
+# region: us-east-1
+# role: arn:aws:iam::324004022774:role/lambda-deployment-serverless-dev-us-east-1-lambdaRole
 
 # you can add statements to the Lambda function's IAM Role here
 #  iam:
