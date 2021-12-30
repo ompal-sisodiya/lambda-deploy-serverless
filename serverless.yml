@@ -9,7 +9,7 @@ provider:
   name: aws
   runtime: nodejs14.x
   region: ${opt:region, env:AWS_REGION}
-  stage: ${opt:stage, 'local'}
+  stage: ${opt:stage, 'dev'}
   profile: serverlessUserProfile
   deploymentBucket:
     name: 1t21-aws-serverless-infra-dev
