@@ -32,7 +32,7 @@ provider:
             - s3:ListBucket
           Resource:
             - arn:aws:s3:::sls-1t21-capital-infra-dev
-            - ${cf:${self:custom.infraStack}.exportBucketArn}/*
+            - rn:aws:s3:::sls-1t21-capital-infra-dev/*
 
         
   logRetentionInDays: 7
@@ -49,11 +49,11 @@ functions:
       FONTCONFIG_PATH: /var/task/fonts
       LOG_LEVELS: ${env:LOG_LEVELS}
       NO_COLOR: true # disable colored logging with Nest.js, which breaks CloudWatch display
-      S3_EXPORT_BUCKET_NAME: ${cf:${self:custom.infraStack}.exportBucketName}
-      STAGE: ${self:provider.stage}
+      S3_EXPORT_BUCKET_NAME: sls-1t21-capital-infra-dev.exportBucketName}
+      STAGE: dev
     events:
       - s3:
-          bucket: ${cf:${self:custom.infraStack}.exportBucketName}
+          bucket: sls-1t21-capital-infra-dev.exportBucketName}
           event: s3:ObjectCreated:*
           existing: true
           rules:
