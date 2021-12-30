@@ -1,0 +1,23 @@
+{
+    "name": "lambda-deployment-by-jenkins",
+    "version": "1.0.0",
+    "description": "first lambda deployment by jenkins",
+    "main": "handler.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/ompal-sisodiya/lambda-deployment-by-jenkins.git"
+    },
+    "author": "ompal sisodiya",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/ompal-sisodiya/lambda-deployment-by-jenkins/issues"
+    },
+    "homepage": "https://github.com/ompal-sisodiya/lambda-deployment-by-jenkins#readme",
+    "dependencies": {
+      "async": "^3.2.2",
+      "serverless": "^2.64.1"
+    }
+  }

@@ -12,7 +12,7 @@ provider:
   stage: ${opt:stage, 'local'}
   profile: serverlessUserProfile
   deploymentBucket:
-    name: ${env:SLS_DEPLOYMENT_BUCKET}
+    name: 1t21-aws-serverless-infra-dev
     blockPublicAccess: true
     maxPreviousDeploymentArtifacts: 5
   stackTags:
