@@ -33,8 +33,6 @@ provider:
           Resource:
             - arn:aws:s3:::sls-1t21-capital-infra-dev
             - arn:aws:s3:::sls-1t21-capital-infra-dev/*
-            
-          resources:
             extensions:
               IamRoleCustomResourcesLambdaExecution:
                 Properties:
