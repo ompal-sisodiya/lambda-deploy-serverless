@@ -4,37 +4,6 @@ useDotenv: true
 
 frameworkVersion: '2'
 
-package:
-  patterns:
-    # Includes
-    - 'dist/**.js'
-    - 'fonts/**'
-    # Excludes
-    - '!./**.md'
-    - '!./**.env*'
-    - '!.cache/**'
-    - '!.git/**'
-    - '!.github/**'
-    - '!.npm/**'
-    - '!.npm-global/**'
-    - '!.pki/**'
-    - '!.scannerwork/**'
-    - '!coverage/**'
-    - '!database/**'
-    - '!docker/**'
-    - '!docs/**'
-    - '!dist/tsconfig.build.tsbuildinfo'
-    - '!src/**'
-    - '!test/**'
-    - '!.eslintrc.js'
-    - '!.npmrc'
-    - '!.prettier*'
-    - '!./tsconfig*.json'
-    - '!Jenkinsfile'
-    - '!jest.json'
-    - '!nest-cli.json'
-    - '!run-sonar.sh'
-    - '!sonar-project.properties'
 
 provider:
   name: aws
@@ -47,10 +16,10 @@ provider:
     blockPublicAccess: true
     maxPreviousDeploymentArtifacts: 5
   stackTags:
-    app:environment: ${opt:stage, self:provider.stage}
+    app:environment: dev
     app:service: ${self:service}
     app:team: Capital
-    app:contact: dl-art-elec-thetransporters@airbus.com
+    app:contact: ompal.hitm09@gmail.com
   lambdaHashingVersion: 20201221
   endpointType: private
   iam:
@@ -75,7 +44,7 @@ provider:
   logRetentionInDays: 7
   
 custom:
-  infraStack: sls-1t21-capital-infra-${opt:stage}
+  infraStack: sls-1t21-capital-infra-dev
 
 functions:
   hello:
