@@ -33,7 +33,12 @@ provider:
           Resource:
             - arn:aws:s3:::sls-1t21-capital-infra-dev
             - arn:aws:s3:::sls-1t21-capital-infra-dev/*
-
+            
+          resources:
+            extensions:
+              IamRoleCustomResourcesLambdaExecution:
+                Properties:
+                  PermissionsBoundary: !Sub arn:aws:iam::324004022774:policy/permission-boundary
         
   logRetentionInDays: 7
   
@@ -51,5 +56,5 @@ functions:
       NO_COLOR: true # disable colored logging with Nest.js, which breaks CloudWatch display
       S3_EXPORT_BUCKET_NAME: sls-1t21-capital-infra-dev.exportBucketName
       STAGE: dev
-      
+
     timeout: 600 # 10 minutes
