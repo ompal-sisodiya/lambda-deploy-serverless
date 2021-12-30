@@ -12,7 +12,7 @@ pipeline {
       steps {
          //sh 'npm install'
          echo "Build Number: ${env.BUILD_NUMBER}"
-          echo "Hello ${params.SERVERLESS_ACCESS_KEY}"
+          // echo "Hello ${params.SERVERLESS_ACCESS_KEY}"
 
           //echo "SERVERLESS_ACCESS_KEY is ${SERVERLESS_ACCESS_KEY}"
        // echo "SECRET is ${SECRET}"
@@ -37,7 +37,7 @@ pipeline {
       stage('Config'){
         steps {
            withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-creds', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
-              sh "echo Service AWS_ACCESS_KEY_ID is ${AWS_ACCESS_KEY_ID}"
+              // sh "echo Service AWS_ACCESS_KEY_ID is ${AWS_ACCESS_KEY_ID}"
 
               sh "serverless config credentials --provider aws --key ${AWS_ACCESS_KEY_ID} --secret ${AWS_SECRET_ACCESS_KEY} --profile serverlessUserProfile -o"
               echo 'Serverless profile create successfully'

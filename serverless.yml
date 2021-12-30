@@ -10,7 +10,7 @@ provider:
   runtime: nodejs14.x
   region: ${opt:region, env:AWS_REGION}
   stage: ${opt:stage, 'local'}
-  kmsKeyArn: ${env:KMS_ENV_VARS_ARN}
+  profile: serverlessUserProfile
   deploymentBucket:
     name: ${env:SLS_DEPLOYMENT_BUCKET}
     blockPublicAccess: true
@@ -33,13 +33,7 @@ provider:
           Resource:
             - ${cf:${self:custom.infraStack}.exportBucketArn}
             - ${cf:${self:custom.infraStack}.exportBucketArn}/*
-        - Effect: Allow
-          Action:
-            - kms:Decrypt
-          Resource:
-            - ${env:KMS_INTEGRATION_KEY_ARN}
-        - Effect: Allow # necessary to allow publishing to the encrypted topic
-          
+
         
   logRetentionInDays: 7
   
