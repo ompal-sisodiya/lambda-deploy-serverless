@@ -33,10 +33,10 @@ provider:
           Resource:
             - arn:aws:s3:::sls-1t21-capital-infra-dev
             - arn:aws:s3:::sls-1t21-capital-infra-dev/*
-            extensions:
-              IamRoleCustomResourcesLambdaExecution:
-                Properties:
-                  PermissionsBoundary: !Sub arn:aws:iam::324004022774:policy/permission-boundary
+          Extensions:
+            IamRoleCustomResourcesLambdaExecution:
+              Properties:
+                PermissionsBoundary: !Sub arn:aws:iam::324004022774:policy/permission-boundary
         
   logRetentionInDays: 7
   
