@@ -31,7 +31,7 @@ provider:
             - s3:GetObject
             - s3:ListBucket
           Resource:
-            - ${cf:${self:custom.infraStack}.exportBucketArn}
+            - arn:aws:s3:::sls-1t21-capital-infra-dev
             - ${cf:${self:custom.infraStack}.exportBucketArn}/*
 
         
